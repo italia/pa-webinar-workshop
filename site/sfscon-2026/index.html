@@ -104,7 +104,8 @@
               <div class="schema-colonna schema-cluster">
                 <p class="schema-titolo">Kubernetes cluster · Azure Italy North</p>
                 <div class="nodo nodo-evidenza"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-video"></use></svg><div><strong>The shared room</strong><span>The PA Webinar test instance: portal and conference.</span></div></div>
-                <div class="nodo"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-settings"></use></svg><div><strong>Six group instances, ws1 to ws6</strong><span>Each with its own portal, PostgreSQL, Redis and mailbox. No video stack of their own.</span></div></div>
+                <div class="nodo"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-settings"></use></svg><div><strong>Six group instances, ws1 to ws6</strong><span>Each with its own portal, PostgreSQL, Redis, mailbox and file storage. No video stack of their own.</span></div></div>
+                <div class="nodo"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-comment"></use></svg><div><strong>A translation engine</strong><span>EuroLLM 9B on CPU, shared by the six groups: it translates titles and descriptions when you save an event.</span></div></div>
                 <div class="nodo"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-exchange-circle"></use></svg><div><strong>One video bridge</strong><span>Carries the audio and video of every room. Its machine is switched on only when an event needs it.</span></div></div>
                 <div class="nodo"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-locked"></use></svg><div><strong>A relay on port 443</strong><span>For networks that block UDP: audio and video pass through it, encrypted.</span></div></div>
               </div>
@@ -298,11 +299,11 @@
               <div class="flusso-testa fl-org" aria-hidden="true">Organiser</div>
               <div class="flusso-testa fl-mail" aria-hidden="true">Mailbox</div>
               <div class="flusso-testa fl-part" aria-hidden="true">Participants</div>
-                <div class="fl fl-org fl-r1"><span class="fl-num">1</span><div><span class="fl-ruolo">Organiser</span><strong>Create and publish</strong><span class="fl-testo">Instance key → New event → four questions → six steps → Publish event</span></div></div>
+                <div class="fl fl-org fl-r1"><span class="fl-num">1</span><div><span class="fl-ruolo">Organiser</span><strong>Make it yours, then create</strong><span class="fl-testo">Instance key → Settings: name, logo, colour → New event → four questions → six steps → Publish event</span></div></div>
                 <div class="fl fl-part fl-r2"><span class="fl-num">2</span><div><span class="fl-ruolo">Participants</span><strong>Register</strong><span class="fl-testo">Public page → Register for this event, with an invented address</span></div></div>
                 <div class="fl fl-mail fl-r3"><span class="fl-num">3</span><div><span class="fl-ruolo">Mailbox</span><strong>Emails arrive</strong><span class="fl-testo">A personal link for each participant, the moderator link for the organiser</span></div></div>
                 <div class="fl fl-org fl-r4"><span class="fl-num">4</span><div><span class="fl-ruolo">Organiser</span><strong>Start the room</strong><span class="fl-testo">Moderator link → Join as moderator → Start event → Start now</span></div></div>
-                <div class="fl fl-part fl-r5"><span class="fl-num">5</span><div><span class="fl-ruolo">Participants</span><strong>Enter</strong><span class="fl-testo">Personal link → your name → Enter now</span></div></div>
+                <div class="fl fl-part fl-r5"><span class="fl-num">5</span><div><span class="fl-ruolo">Participants</span><strong>Wait in the square, then enter</strong><span class="fl-testo">Personal link → Step into the square → Enter now when the room opens</span></div></div>
                 <div class="fl fl-tutti fl-r6"><span class="fl-num">6</span><div><span class="fl-ruolo">Everybody</span><strong>Meet in the room</strong><span class="fl-testo">Raise hands, chat, Q&amp;A, polls, “In one word”, agenda</span></div></div>
                 <div class="fl fl-org fl-r7"><span class="fl-num">7</span><div><span class="fl-ruolo">Organiser</span><strong>Close and look back</strong><span class="fl-testo">Leave room → End for everyone → People, Statistics, After the event</span></div></div>
             </figure>
@@ -313,6 +314,16 @@
               <li>
                 <span class="chi">Organiser</span>
                 <p class="mb-0">Open the portal of your instance, choose <strong>Sign in with the instance key</strong> and paste the key from the chat.</p>
+              </li>
+              <li>
+                <span class="chi">Organiser</span>
+                <p class="mb-1">Make the instance yours in <strong>Settings → Branding</strong>, then <strong>Save</strong>:</p>
+                <ul class="mb-0">
+                  <li><strong>Application name</strong> and <strong>Organization name</strong>: they appear in the header, the browser tab and the emails.</li>
+                  <li><strong>Custom logo</strong>: upload an image from your laptop, PNG, JPEG, WebP, SVG or GIF.</li>
+                  <li><strong>Primary color</strong> for buttons and links.</li>
+                  <li><strong>Waiting room</strong> is already set to the square: <strong>Videogame</strong>. Leave it, or try <strong>Classic</strong>.</li>
+                </ul>
               </li>
               <li>
                 <span class="chi">Organiser</span>
@@ -329,7 +340,7 @@
                 <span class="chi">Organiser</span>
                 <p class="mb-1">Fill in the six steps and choose <strong>Publish event</strong> at the end. Three things to know:</p>
                 <ul class="mb-0">
-                  <li>The title and the description <strong>in Italian</strong> are required, even with the screens in English. PA Webinar is made for the Italian public administration, so Italian is always the main language. Write whatever you like there; <strong>Change languages</strong> adds English.</li>
+                  <li>The title and the description <strong>in Italian</strong> are required, even with the screens in English. PA Webinar is made for the Italian public administration, so Italian is always the main language. Write whatever you like there and leave English empty: when you save, PA Webinar translates the title and the description into English by itself, in less than a minute. The English page of the event shows the translation.</li>
                   <li>In <strong>When</strong>, set today and a start time a few minutes from now.</li>
                   <li>In <strong>People</strong>, the lead moderator is you, with an invented address.</li>
                 </ul>
@@ -348,7 +359,7 @@
               </li>
               <li>
                 <span class="chi">Participants</span>
-                <p class="mb-0">Open your link from the confirmation email, type your name and choose <strong>Enter now</strong>. Microphone and camera start off: turn them on only with headphones.</p>
+                <p class="mb-0">Open your link from the confirmation email. Until the room opens you wait: choose <strong>Step into the square</strong> to walk around with an avatar and meet the others who are waiting. When the organiser starts the room, type your name and choose <strong>Enter now</strong>. Microphone and camera start off: turn them on only with headphones.</p>
               </li>
               <li>
                 <span class="chi">Everybody</span>
