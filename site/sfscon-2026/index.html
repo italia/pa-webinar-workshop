@@ -89,9 +89,37 @@
             </div>
           </div>
 
+
+          <section id="setup" aria-labelledby="setup-title">
+            <h2 id="setup-title">How today’s workshop is wired</h2>
+            <p>Everything you use today runs on one Kubernetes cluster in the Azure Italy North region, and all the rooms share one video bridge.</p>
+            <figure class="schema">
+              <figcaption class="visually-hidden">Who connects to what during the workshop</figcaption>
+              <div class="schema-colonna">
+                <p class="schema-titolo">In Crane Hall</p>
+                <div class="nodo"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-user"></use></svg><div><strong>Your laptop or phone</strong><span>A browser and nothing else. Microphone off.</span></div></div>
+                <div class="nodo"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-presentation"></use></svg><div><strong>Daniele’s laptop</strong><span>On the projector and the speakers. The only open microphone in the room.</span></div></div>
+              </div>
+              <div class="schema-freccia"><span>pages over HTTPS, audio and video over UDP</span></div>
+              <div class="schema-colonna schema-cluster">
+                <p class="schema-titolo">Kubernetes cluster · Azure Italy North</p>
+                <div class="nodo nodo-evidenza"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-video"></use></svg><div><strong>The shared room</strong><span>The PA Webinar test instance: portal and conference.</span></div></div>
+                <div class="nodo"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-settings"></use></svg><div><strong>Six group instances, ws1 to ws6</strong><span>Each with its own portal, PostgreSQL, Redis and mailbox. No video stack of their own.</span></div></div>
+                <div class="nodo"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-exchange-circle"></use></svg><div><strong>One video bridge</strong><span>Carries the audio and video of every room. Its machine is switched on only when an event needs it.</span></div></div>
+                <div class="nodo"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-locked"></use></svg><div><strong>A relay on port 443</strong><span>For networks that block UDP: audio and video pass through it, encrypted.</span></div></div>
+              </div>
+              <div class="schema-freccia verso-su"><span>moderates the shared room</span></div>
+              <div class="schema-colonna">
+                <p class="schema-titolo">Online</p>
+                <div class="nodo"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-user"></use></svg><div><strong>Raffaele</strong><span>Connected remotely, as moderator.</span></div></div>
+              </div>
+            </figure>
+          </section>
+
           <nav aria-label="On this page" class="mb-4">
             <p class="mb-2 fw-semibold">On this page</p>
             <ul class="link-list ps-0">
+              <li><a class="list-item" href="#setup">How today’s workshop is wired</a></li>
               <li><a class="list-item" href="#bring">What to bring</a></li>
               <li><a class="list-item" href="#plan">The 40 minutes</a></li>
               <li><a class="list-item" href="#room">The shared room</a></li>
@@ -264,6 +292,21 @@
               </article>
             </div>
 
+            <h3 class="h4 mt-4">The exercise at a glance</h3>
+            <figure class="flusso">
+              <figcaption class="visually-hidden">The group exercise, step by step, by role: organiser, mailbox, participants</figcaption>
+              <div class="flusso-testa fl-org" aria-hidden="true">Organiser</div>
+              <div class="flusso-testa fl-mail" aria-hidden="true">Mailbox</div>
+              <div class="flusso-testa fl-part" aria-hidden="true">Participants</div>
+                <div class="fl fl-org fl-r1"><span class="fl-num">1</span><div><span class="fl-ruolo">Organiser</span><strong>Create and publish</strong><span class="fl-testo">Instance key → New event → four questions → six steps → Publish event</span></div></div>
+                <div class="fl fl-part fl-r2"><span class="fl-num">2</span><div><span class="fl-ruolo">Participants</span><strong>Register</strong><span class="fl-testo">Public page → Register for this event, with an invented address</span></div></div>
+                <div class="fl fl-mail fl-r3"><span class="fl-num">3</span><div><span class="fl-ruolo">Mailbox</span><strong>Emails arrive</strong><span class="fl-testo">A personal link for each participant, the moderator link for the organiser</span></div></div>
+                <div class="fl fl-org fl-r4"><span class="fl-num">4</span><div><span class="fl-ruolo">Organiser</span><strong>Start the room</strong><span class="fl-testo">Moderator link → Join as moderator → Start event → Start now</span></div></div>
+                <div class="fl fl-part fl-r5"><span class="fl-num">5</span><div><span class="fl-ruolo">Participants</span><strong>Enter</strong><span class="fl-testo">Personal link → your name → Enter now</span></div></div>
+                <div class="fl fl-tutti fl-r6"><span class="fl-num">6</span><div><span class="fl-ruolo">Everybody</span><strong>Meet in the room</strong><span class="fl-testo">Raise hands, chat, Q&amp;A, polls, “In one word”, agenda</span></div></div>
+                <div class="fl fl-org fl-r7"><span class="fl-num">7</span><div><span class="fl-ruolo">Organiser</span><strong>Close and look back</strong><span class="fl-testo">Leave room → End for everyone → People, Statistics, After the event</span></div></div>
+            </figure>
+
             <h3 class="h4 mt-4">The steps</h3>
             <p>Decide who does what: one <strong>organiser</strong>, who also moderates the room, and the others as <strong>participants</strong>. Swap roles if there is time.</p>
             <ol class="passi">
@@ -353,40 +396,37 @@
               </div>
             </div>
 
-            <div class="it-card-group it-card-group-2-cols">
-              <article class="it-card rounded shadow-sm border">
-                <h3 class="it-card-title h5">Docker Compose</h3>
-                <div class="it-card-body">
-                  <p class="it-card-text"><strong>To look at the portal and the code</strong> on one computer, with demo events. It is the setup for development, not for events.</p>
-                  <p class="it-card-text">You need Docker with Compose. It downloads about 1.4 GB and starts in about a minute and a half.</p>
-                  <p class="it-card-text mb-0"><a href="https://github.com/italia/pa-webinar/blob/d2162afd/docs/DEVELOPMENT.md">Development guide</a></p>
-                </div>
-              </article>
-              <article class="it-card rounded shadow-sm border">
-                <h3 class="it-card-title h5">minikube</h3>
-                <div class="it-card-body">
-                  <p class="it-card-text"><strong>The whole platform on a Linux laptop</strong>, rooms included, to evaluate it. Browsers can join only from the same laptop.</p>
-                  <p class="it-card-text">You need 4 CPUs, 8 GB of memory, 15 GB of free disk. On a new virtual machine it took 3 minutes 33 seconds and 2.65 GB.</p>
-                  <p class="it-card-text mb-0"><a href="https://github.com/italia/pa-webinar/blob/d2162afd/docs/install/minikube.md">minikube guide</a></p>
-                </div>
-              </article>
-              <article class="it-card rounded shadow-sm border">
-                <h3 class="it-card-title h5">k3s, on your own servers</h3>
-                <div class="it-card-body">
-                  <p class="it-card-text"><strong>Small production on premises</strong>, with one command: <code>infra/onprem/k3s/pa-webinar-up.sh</code>. One server with 4 vCPUs and 8 GiB holds about 20 participants on camera, without high availability.</p>
-                  <p class="it-card-text">Tested in the lab, on one and on three virtual machines. No real event has run on it yet.</p>
-                  <p class="it-card-text mb-0"><a href="https://github.com/italia/pa-webinar/blob/d2162afd/docs/install/k3s.md">k3s guide</a></p>
-                </div>
-              </article>
-              <article class="it-card rounded shadow-sm border">
-                <h3 class="it-card-title h5">In the cloud</h3>
-                <div class="it-card-body">
-                  <p class="it-card-text"><strong>Production</strong>, with video bridges that scale to zero between events, a TURN server and object storage for recordings and materials.</p>
-                  <p class="it-card-text">AKS runs real events, including today’s rooms. EKS and GKE are not verified yet.</p>
-                  <p class="it-card-text mb-0"><a href="https://github.com/italia/pa-webinar/blob/d2162afd/docs/install/aks.md">AKS</a> · <a href="https://github.com/italia/pa-webinar/blob/d2162afd/docs/install/eks.md">EKS</a> · <a href="https://github.com/italia/pa-webinar/blob/d2162afd/docs/install/gke.md">GKE</a></p>
-                </div>
-              </article>
-            </div>
+            <ol class="scala" aria-label="Four ways to install, from a laptop to production">
+              <li class="gradino g1">
+                <div class="gradino-testa"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-code-circle"></use></svg><h3 class="h5 mb-0">Docker Compose</h3></div>
+                <div class="gradino-livelli"><span class="livello liv-dev">For development</span></div>
+                <p>Look at the portal and the code on one computer, with demo events.</p>
+                <dl><dt>You need</dt><dd>Docker with Compose</dd><dt>Measured</dt><dd>about 1.4 GB, a minute and a half</dd></dl>
+                <p class="mb-0"><a href="https://github.com/italia/pa-webinar/blob/d2162afd/docs/DEVELOPMENT.md">Development guide</a></p>
+              </li>
+              <li class="gradino g2">
+                <div class="gradino-testa"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-software"></use></svg><h3 class="h5 mb-0">minikube</h3></div>
+                <div class="gradino-livelli"><span class="livello liv-lab">Tested in lab</span><span class="livello liv-dev">Evaluation, not events</span></div>
+                <p>The whole platform on a Linux laptop, rooms included. Browsers join only from that laptop.</p>
+                <dl><dt>You need</dt><dd>4 CPUs, 8 GB of memory, 15 GB of disk</dd><dt>Measured</dt><dd>2.65 GB, 3 minutes 33 seconds</dd></dl>
+                <p class="mb-0"><a href="https://github.com/italia/pa-webinar/blob/d2162afd/docs/install/minikube.md">minikube guide</a></p>
+              </li>
+              <li class="gradino g3">
+                <div class="gradino-testa"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-tool"></use></svg><h3 class="h5 mb-0">k3s</h3></div>
+                <div class="gradino-livelli"><span class="livello liv-lab">Tested in lab</span><span class="livello liv-dev">No real event yet</span></div>
+                <p>Small production on your own servers, with one command. No high availability.</p>
+                <dl><dt>You need</dt><dd>one server with 4 vCPUs and 8 GiB for about 20 people on camera, or three VMs</dd></dl>
+                <p class="mb-0"><a href="https://github.com/italia/pa-webinar/blob/d2162afd/docs/install/k3s.md">k3s guide</a></p>
+              </li>
+              <li class="gradino g4">
+                <div class="gradino-testa"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-exchange-circle"></use></svg><h3 class="h5 mb-0">In the cloud</h3></div>
+                <div class="gradino-livelli"><span class="livello liv-real">AKS: runs real events</span><span class="livello liv-todo">EKS, GKE: not verified yet</span></div>
+                <p>Production, with video bridges that scale to zero between events, a TURN relay and object storage.</p>
+                <dl><dt>You need</dt><dd>a managed Kubernetes cluster with a node pool for the bridges</dd></dl>
+                <p class="mb-0"><a href="https://github.com/italia/pa-webinar/blob/d2162afd/docs/install/aks.md">AKS</a> · <a href="https://github.com/italia/pa-webinar/blob/d2162afd/docs/install/eks.md">EKS</a> · <a href="https://github.com/italia/pa-webinar/blob/d2162afd/docs/install/gke.md">GKE</a></p>
+              </li>
+            </ol>
+            <p class="scala-asse" aria-hidden="true"><span>From your laptop</span><span>to production</span></p>
 
             <h3 class="h4 mt-5">Docker Compose, step by step</h3>
             <pre class="cmd" tabindex="0"><code>git clone https://github.com/italia/pa-webinar.git
