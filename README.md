@@ -1,16 +1,12 @@
-# PA Webinar workshop
+# PA Webinar workshops
 
-Hands-on workshop on [PA Webinar](https://github.com/italia/pa-webinar), the open source webinar platform for the Italian public administration.
+Hands-on workshops on [PA Webinar](https://github.com/italia/pa-webinar), the open source webinar platform for the Italian public administration.
 
-**SFSCON 2026** · Friday 13 November, 17:00 · Crane Hall, Workshop B · 40 minutes
+Each workshop has its own page, with the instances available on the day and the installation steps for that session.
 
-This page will list:
+## Workshops
 
-- the instances you can join during the workshop;
-- how to install PA Webinar on your laptop, on-premises or in the cloud;
-- what to prepare before you arrive.
-
-Details will be published here before the workshop.
+- [SFSCON 2026](sfscon-2026/) · Bolzano, 13 November 2026
 
 ## Links
 
