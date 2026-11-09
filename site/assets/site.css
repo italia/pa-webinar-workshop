@@ -78,3 +78,5 @@ section + section { margin-top: 3rem; }
 
 /* La linea della timeline sale fino al titolo della sezione: un po' d'aria. */
 #plan .it-timeline-wrapper { margin-top: 2.5rem; }
+/* Orari della timeline: un po' più di respiro attorno alle cifre. */
+#plan .it-timeline-wrapper .pin-text span { padding: 6px 12px; }
