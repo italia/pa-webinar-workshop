@@ -20,4 +20,4 @@ Once a workshop page is printed or shared, for example as a QR code, keep its ad
 
 - Content: [CC BY-SA 4.0](LICENSE).
 - Fonts in `site/assets/fonts/`: Titillium Web, Roboto Mono and Lora, under the SIL Open Font License 1.1 ([OFL.txt](site/assets/fonts/OFL.txt)).
-- [Bootstrap Italia](https://italia.github.io/bootstrap-italia/) 2.18.3 in `site/assets/bootstrap-italia/`: BSD-3-Clause ([LICENSE.txt](site/assets/bootstrap-italia/LICENSE.txt)).
+- [Bootstrap Italia](https://italia.github.io/bootstrap-italia/) 2.18.3 in `site/assets/bootstrap-italia/`: BSD-3-Clause ([LICENSE.txt](site/assets/bootstrap-italia/LICENSE.txt)). The stylesheet is the published `bootstrap-italia.min.css` without its source map comment and without the `@font-face` of the Video.js icon font, which these pages do not use and the Content Security Policy would block.
