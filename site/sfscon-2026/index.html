@@ -4,79 +4,463 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PA Webinar workshop · SFSCON 2026</title>
-  <meta name="description" content="Hands-on PA Webinar workshop at SFSCON 2026: instances to join, how to install PA Webinar on a laptop, on-premises or in the cloud, and what to prepare.">
+  <meta name="description" content="Hands-on PA Webinar workshop at SFSCON 2026: join a live room, run your own event on a group instance, and learn how to install PA Webinar with Docker Compose, minikube, k3s or in the cloud.">
+  <link rel="stylesheet" href="/assets/bootstrap-italia/bootstrap-italia.min.css">
   <link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
-  <a class="skip" href="#content">Skip to content</a>
+  <a class="visually-hidden-focusable" href="#content">Skip to content</a>
 
-  <header>
-    <div class="slim"><div class="wrap"><a href="/">PA Webinar workshops</a></div></div>
-    <div class="masthead"><div class="wrap">
-      <a class="brand" href="/">PA Webinar</a>
-      <p class="tagline">Open source webinar platform for the Italian public administration</p>
-    </div></div>
+  <header class="it-header-wrapper">
+    <div class="it-header-slim-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="it-header-slim-wrapper-content">
+              <a class="navbar-brand" href="/">PA Webinar workshops</a>
+              <div class="it-header-slim-right-zone">
+                <a class="text-white" href="https://github.com/italia/pa-webinar">Source code</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="it-nav-wrapper">
+      <div class="it-header-center-wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="it-header-center-content-wrapper">
+                <div class="it-brand-wrapper">
+                  <a href="/">
+                    <svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-video"></use></svg>
+                    <div class="it-brand-text">
+                      <div class="it-brand-title">PA Webinar</div>
+                      <div class="it-brand-tagline d-none d-md-block">Open source webinar platform for the Italian public administration</div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </header>
 
   <main id="content">
-    <div class="wrap">
-      <nav aria-label="Breadcrumb">
-        <ol class="crumbs">
-          <li><a href="/">Workshops</a></li>
-          <li aria-current="page">SFSCON 2026</li>
-        </ol>
-      </nav>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-10">
 
-      <h1>PA Webinar workshop at SFSCON 2026</h1>
-      <p class="lead">Set up events, run a live session together and try PA Webinar on your own machine.</p>
+          <nav class="breadcrumb-container mt-3" aria-label="Breadcrumb">
+            <ol class="breadcrumb p-0">
+              <li class="breadcrumb-item"><a href="/">Workshops</a><span class="separator">/</span></li>
+              <li class="breadcrumb-item active" aria-current="page">SFSCON 2026</li>
+            </ol>
+          </nav>
 
-      <dl class="facts">
-        <dt>When</dt><dd>Friday 13 November 2026, 17:00</dd>
-        <dt>Where</dt><dd>Crane Hall, Workshop B · NOI Techpark, Bolzano</dd>
-        <dt>Length</dt><dd>40 minutes</dd>
-      </dl>
+          <h1 class="mt-2 mb-3">PA Webinar workshop at SFSCON 2026</h1>
+          <p class="lead">In 40 minutes you use PA Webinar in three ways: as a participant in a live room, as the organiser of your own event, and as the person who installs it.</p>
 
-      <div class="callout" role="note">
-        <p><strong>PA Webinar is a beta.</strong> It is already used for public events, and it is still changing. Your feedback during the workshop goes straight into the next releases.</p>
+          <ul class="fatti">
+            <li>
+              <svg class="icon icon-primary" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-calendar"></use></svg>
+              <span><strong>Friday 13 November 2026, 17:00–17:40</strong></span>
+            </li>
+            <li>
+              <svg class="icon icon-primary" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-map-marker"></use></svg>
+              <span>Crane Hall, Workshop B · NOI Techpark, Bolzano</span>
+            </li>
+            <li>
+              <svg class="icon icon-primary" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-user"></use></svg>
+              <span>Daniele Pizzolli in the room, Raffaele Vitiello connected online</span>
+            </li>
+          </ul>
+
+          <div class="callout warning">
+            <div class="callout-inner">
+              <div class="callout-title">
+                <svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-warning-circle"></use></svg>
+                <span class="text">PA Webinar is a beta</span>
+              </div>
+              <p class="mb-0">It already runs public events, and it is still changing. What you notice today goes into the next releases.</p>
+            </div>
+          </div>
+
+          <nav aria-label="On this page" class="mb-4">
+            <p class="mb-2 fw-semibold">On this page</p>
+            <ul class="link-list ps-0">
+              <li><a class="list-item" href="#bring">What to bring</a></li>
+              <li><a class="list-item" href="#plan">The 40 minutes</a></li>
+              <li><a class="list-item" href="#room">The shared room</a></li>
+              <li><a class="list-item" href="#groups">Run your own event</a></li>
+              <li><a class="list-item" href="#install">Install it yourself</a></li>
+              <li><a class="list-item" href="#feedback">Feedback</a></li>
+            </ul>
+          </nav>
+
+          <section id="bring" aria-labelledby="bring-title">
+            <h2 id="bring-title">What to bring</h2>
+            <ul>
+              <li>A laptop with a recent Chrome, Edge or Firefox. A phone is enough for the shared room.</li>
+              <li><strong>Headphones.</strong> Twenty laptops with open speakers in one room make echo and feedback. Keep your microphone off unless you are speaking.</li>
+              <li>Nothing to install. If you want PA Webinar on your own laptop, install it at home: the download is about 2.7 GB and the room network cannot carry it for everyone. See <a href="#install">Install it yourself</a>.</li>
+            </ul>
+          </section>
+
+          <section id="plan" aria-labelledby="plan-title">
+            <h2 id="plan-title">The 40 minutes</h2>
+            <div class="it-timeline-wrapper">
+              <div class="row">
+                <div class="col-12">
+                  <div class="timeline-element">
+                    <div class="it-pin-wrapper it-evidence">
+                      <div class="pin-icon"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-map-marker"></use></svg></div>
+                      <div class="pin-text"><span>17:00</span></div>
+                    </div>
+                    <div class="card-wrapper">
+                      <div class="card">
+                        <div class="card-body">
+                          <h3 class="card-title h5">Welcome · 5 minutes</h3>
+                          <p class="card-text">Open this page from the QR code on the screen. We go through the plan.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="timeline-element">
+                    <div class="it-pin-wrapper it-evidence">
+                      <div class="pin-icon"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-video"></use></svg></div>
+                      <div class="pin-text"><span>17:05</span></div>
+                    </div>
+                    <div class="card-wrapper">
+                      <div class="card">
+                        <div class="card-body">
+                          <h3 class="card-title h5">Join a live room · 10 minutes</h3>
+                          <p class="card-text">Everybody joins <a href="#room">the shared room</a> as a guest. Raise your hand, write in the chat, ask a question in Q&amp;A, answer a poll and add a word to the “In one word” cloud. Raffaele moderates and gives the floor to someone in the room.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="timeline-element">
+                    <div class="it-pin-wrapper it-evidence">
+                      <div class="pin-icon"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-settings"></use></svg></div>
+                      <div class="pin-text"><span>17:15</span></div>
+                    </div>
+                    <div class="card-wrapper">
+                      <div class="card">
+                        <div class="card-body">
+                          <h3 class="card-title h5">Run your own event · 15 minutes</h3>
+                          <p class="card-text">Groups of three or four, each with its own PA Webinar instance: create an event, register, start the room, moderate. Daniele notes where you get stuck. This is the first usability test of the organiser screens. <a href="#groups">The steps</a>.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="timeline-element">
+                    <div class="it-pin-wrapper it-evidence">
+                      <div class="pin-icon"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-software"></use></svg></div>
+                      <div class="pin-text"><span>17:30</span></div>
+                    </div>
+                    <div class="card-wrapper">
+                      <div class="card">
+                        <div class="card-body">
+                          <h3 class="card-title h5">Install it yourself · 5 minutes</h3>
+                          <p class="card-text">Raffaele shows an installation running on a laptop and the four ways to install. You do it later, with the commands in <a href="#install">Install it yourself</a>.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="timeline-element">
+                    <div class="it-pin-wrapper it-evidence">
+                      <div class="pin-icon"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-comment"></use></svg></div>
+                      <div class="pin-text"><span>17:35</span></div>
+                    </div>
+                    <div class="card-wrapper">
+                      <div class="card">
+                        <div class="card-body">
+                          <h3 class="card-title h5">Feedback and questions · 5 minutes</h3>
+                          <p class="card-text">Back in the shared room. When Raffaele closes it, a short questionnaire appears for everybody. Then your questions.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="room" aria-labelledby="room-title">
+            <h2 id="room-title">The shared room</h2>
+            <p class="in-attesa">The link to the shared room will be published here before the workshop.</p>
+            <ol>
+              <li>Open the link, type your name and choose <strong>Enter now</strong>. You do not need to register.</li>
+              <li>You enter with microphone and camera off. Leave the microphone off: Daniele’s laptop is the only open microphone in the room, and it plays Raffaele’s voice.</li>
+              <li>The panels are on the right on a laptop and at the bottom on a phone: Chat, Q&amp;A, Polls, In one word, Agenda, Materials, Participants.</li>
+            </ol>
+          </section>
+
+          <section id="groups" aria-labelledby="groups-title">
+            <h2 id="groups-title">Run your own event</h2>
+            <p>Each group gets one PA Webinar instance, installed for the workshop: you are its administrator and can change anything. At 17:15 the <strong>instance key</strong> of each group is posted in the chat of the shared room. The instances are deleted on Friday evening, with everything in them.</p>
+
+            <h3 class="h4 mt-4">The instances</h3>
+            <p>Each instance has a mailbox: every email it sends ends up there, and nothing leaves the server. Use invented addresses, such as <code>anna@example.org</code>. Mailbox user: the instance name (<code>ws1</code>, <code>ws2</code>…), password: the instance key.</p>
+            <div class="it-card-group it-card-group-3-cols mb-4">
+              <article class="it-card rounded shadow-sm border">
+                <h4 class="it-card-title h5">Group 1 · ws1</h4>
+                <div class="it-card-body">
+                  <p class="it-card-text mb-1 indirizzo"><a href="https://ws1.workshop.pa-webinar.developers.italia.it/en/admin/login">Portal</a></p>
+                  <p class="it-card-text mb-0 indirizzo"><a href="https://ws1-mail.workshop.pa-webinar.developers.italia.it/">Mailbox</a></p>
+                </div>
+              </article>
+              <article class="it-card rounded shadow-sm border">
+                <h4 class="it-card-title h5">Group 2 · ws2</h4>
+                <div class="it-card-body">
+                  <p class="it-card-text mb-1 indirizzo"><a href="https://ws2.workshop.pa-webinar.developers.italia.it/en/admin/login">Portal</a></p>
+                  <p class="it-card-text mb-0 indirizzo"><a href="https://ws2-mail.workshop.pa-webinar.developers.italia.it/">Mailbox</a></p>
+                </div>
+              </article>
+              <article class="it-card rounded shadow-sm border">
+                <h4 class="it-card-title h5">Group 3 · ws3</h4>
+                <div class="it-card-body">
+                  <p class="it-card-text mb-1 indirizzo"><a href="https://ws3.workshop.pa-webinar.developers.italia.it/en/admin/login">Portal</a></p>
+                  <p class="it-card-text mb-0 indirizzo"><a href="https://ws3-mail.workshop.pa-webinar.developers.italia.it/">Mailbox</a></p>
+                </div>
+              </article>
+              <article class="it-card rounded shadow-sm border">
+                <h4 class="it-card-title h5">Group 4 · ws4</h4>
+                <div class="it-card-body">
+                  <p class="it-card-text mb-1 indirizzo"><a href="https://ws4.workshop.pa-webinar.developers.italia.it/en/admin/login">Portal</a></p>
+                  <p class="it-card-text mb-0 indirizzo"><a href="https://ws4-mail.workshop.pa-webinar.developers.italia.it/">Mailbox</a></p>
+                </div>
+              </article>
+              <article class="it-card rounded shadow-sm border">
+                <h4 class="it-card-title h5">Group 5 · ws5</h4>
+                <div class="it-card-body">
+                  <p class="it-card-text mb-1 indirizzo"><a href="https://ws5.workshop.pa-webinar.developers.italia.it/en/admin/login">Portal</a></p>
+                  <p class="it-card-text mb-0 indirizzo"><a href="https://ws5-mail.workshop.pa-webinar.developers.italia.it/">Mailbox</a></p>
+                </div>
+              </article>
+              <article class="it-card rounded shadow-sm border">
+                <h4 class="it-card-title h5">Group 6 · ws6</h4>
+                <div class="it-card-body">
+                  <p class="it-card-text mb-1 indirizzo"><a href="https://ws6.workshop.pa-webinar.developers.italia.it/en/admin/login">Portal</a></p>
+                  <p class="it-card-text mb-0 indirizzo"><a href="https://ws6-mail.workshop.pa-webinar.developers.italia.it/">Mailbox</a></p>
+                </div>
+              </article>
+            </div>
+
+            <h3 class="h4 mt-4">The steps</h3>
+            <p>Decide who does what: one <strong>organiser</strong>, who also moderates the room, and the others as <strong>participants</strong>. Swap roles if there is time.</p>
+            <ol class="passi">
+              <li>
+                <span class="chi">Organiser</span>
+                <p class="mb-0">Open the portal of your instance, choose <strong>Sign in with the instance key</strong> and paste the key from the chat.</p>
+              </li>
+              <li>
+                <span class="chi">Organiser</span>
+                <p class="mb-1">Go to <strong>Events → New event</strong> and answer the four questions:</p>
+                <ul class="mb-1">
+                  <li>How many people do you expect? <strong>Up to 20</strong></li>
+                  <li>Who can speak and appear on video? <strong>Everyone</strong></li>
+                  <li>Do you want to be able to record? <strong>No</strong>: recording is not installed on these instances</li>
+                  <li>Who can take part? <strong>Anyone who registers</strong></li>
+                </ul>
+                <p class="mb-0">Then <strong>Continue</strong>.</p>
+              </li>
+              <li>
+                <span class="chi">Organiser</span>
+                <p class="mb-1">Fill in the six steps and choose <strong>Publish event</strong> at the end. Three things to know:</p>
+                <ul class="mb-0">
+                  <li>The title and the description <strong>in Italian</strong> are required, even with the screens in English. PA Webinar is made for the Italian public administration, so Italian is always the main language. Write whatever you like there; <strong>Change languages</strong> adds English.</li>
+                  <li>In <strong>When</strong>, set today and a start time a few minutes from now.</li>
+                  <li>In <strong>People</strong>, the lead moderator is you, with an invented address.</li>
+                </ul>
+              </li>
+              <li>
+                <span class="chi">Participants</span>
+                <p class="mb-0">Open the public page of the event: the organiser shares it with <strong>Copy public link</strong> or shows its QR code. Choose <strong>Register for this event</strong> and use an invented address.</p>
+              </li>
+              <li>
+                <span class="chi">Everybody</span>
+                <p class="mb-0">Open the mailbox of your instance. Emails arrive within a minute: the registration confirmations for the participants, the moderator link for the organiser.</p>
+              </li>
+              <li>
+                <span class="chi">Organiser</span>
+                <p class="mb-0">Open the moderator link, then <strong>Join as moderator</strong>, <strong>Start event</strong> and <strong>Start now</strong>.</p>
+              </li>
+              <li>
+                <span class="chi">Participants</span>
+                <p class="mb-0">Open your link from the confirmation email, type your name and choose <strong>Enter now</strong>. Microphone and camera start off: turn them on only with headphones.</p>
+              </li>
+              <li>
+                <span class="chi">Everybody</span>
+                <p class="mb-0">Try what you would use in a real meeting: raise your hand, chat, Q&amp;A, a poll, “In one word”, the agenda. The organiser answers raised hands with <strong>Give the floor</strong> and finds the room controls in the <strong>Control</strong> panel.</p>
+              </li>
+              <li>
+                <span class="chi">Organiser</span>
+                <p class="mb-0">Close with <strong>Leave room → End for everyone</strong>. Then open the event in the administration area and look at the <strong>People</strong>, <strong>Statistics</strong> and <strong>After the event</strong> tabs.</p>
+              </li>
+            </ol>
+
+            <h3 class="h4 mt-4">If something does not work</h3>
+            <details class="aiuto">
+              <summary>The key is refused</summary>
+              <div><p>Copy it again from the chat, without spaces at the start or at the end. Each key works only on its own instance.</p></div>
+            </details>
+            <details class="aiuto">
+              <summary>No email in the mailbox</summary>
+              <div><p>The instance sends emails once a minute: wait a minute and reload the mailbox. Check that you opened the mailbox of your own instance.</p></div>
+            </details>
+            <details class="aiuto">
+              <summary>“Enter now” does not appear, or the room is getting ready</summary>
+              <div><p>The event has not started yet. The organiser opens the moderator link and chooses <strong>Start event</strong>, then <strong>Start now</strong>.</p></div>
+            </details>
+            <details class="aiuto">
+              <summary>Nobody hears me, or there is echo</summary>
+              <div><p>Use headphones and check that your microphone is on in the room toolbar. If two laptops in the same group have open speakers, mute one of them.</p></div>
+            </details>
+            <details class="aiuto">
+              <summary>Still stuck</summary>
+              <div><p>Raise your hand in the shared room, or call Daniele. Note what blocked you: it is exactly what we want to hear in the questionnaire.</p></div>
+            </details>
+          </section>
+
+          <section id="install" aria-labelledby="install-title">
+            <h2 id="install-title">Install it yourself</h2>
+            <p>PA Webinar runs on Kubernetes, and Docker Compose is enough to look at the portal. All the commands below use the same version as the group instances: commit <code>d2162afd</code> of the <code>main</code> branch, with the images tagged <code>dev-f4021b1</code>.</p>
+            <div class="callout note">
+              <div class="callout-inner">
+                <div class="callout-title">
+                  <svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-info-circle"></use></svg>
+                  <span class="text">Always pass the tag</span>
+                </div>
+                <p class="mb-0">Without <code>--tag</code>, the scripts on <code>main</code> use the <code>dev</code> image, which changes with every push to the development branch and may not match the code you checked out.</p>
+              </div>
+            </div>
+
+            <div class="it-card-group it-card-group-2-cols">
+              <article class="it-card rounded shadow-sm border">
+                <h3 class="it-card-title h5">Docker Compose</h3>
+                <div class="it-card-body">
+                  <p class="it-card-text"><strong>To look at the portal and the code</strong> on one computer, with demo events. It is the setup for development, not for events.</p>
+                  <p class="it-card-text">You need Docker with Compose. It downloads about 1.4 GB and starts in about a minute and a half.</p>
+                  <p class="it-card-text mb-0"><a href="https://github.com/italia/pa-webinar/blob/d2162afd/docs/DEVELOPMENT.md">Development guide</a></p>
+                </div>
+              </article>
+              <article class="it-card rounded shadow-sm border">
+                <h3 class="it-card-title h5">minikube</h3>
+                <div class="it-card-body">
+                  <p class="it-card-text"><strong>The whole platform on a Linux laptop</strong>, rooms included, to evaluate it. Browsers can join only from the same laptop.</p>
+                  <p class="it-card-text">You need 4 CPUs, 8 GB of memory, 15 GB of free disk. On a new virtual machine it took 3 minutes 33 seconds and 2.65 GB.</p>
+                  <p class="it-card-text mb-0"><a href="https://github.com/italia/pa-webinar/blob/d2162afd/docs/install/minikube.md">minikube guide</a></p>
+                </div>
+              </article>
+              <article class="it-card rounded shadow-sm border">
+                <h3 class="it-card-title h5">k3s, on your own servers</h3>
+                <div class="it-card-body">
+                  <p class="it-card-text"><strong>Small production on premises</strong>, with one command: <code>infra/onprem/k3s/pa-webinar-up.sh</code>. One server with 4 vCPUs and 8 GiB holds about 20 participants on camera, without high availability.</p>
+                  <p class="it-card-text">Tested in the lab, on one and on three virtual machines. No real event has run on it yet.</p>
+                  <p class="it-card-text mb-0"><a href="https://github.com/italia/pa-webinar/blob/d2162afd/docs/install/k3s.md">k3s guide</a></p>
+                </div>
+              </article>
+              <article class="it-card rounded shadow-sm border">
+                <h3 class="it-card-title h5">In the cloud</h3>
+                <div class="it-card-body">
+                  <p class="it-card-text"><strong>Production</strong>, with video bridges that scale to zero between events, a TURN server and object storage for recordings and materials.</p>
+                  <p class="it-card-text">AKS runs real events, including today’s rooms. EKS and GKE are not verified yet.</p>
+                  <p class="it-card-text mb-0"><a href="https://github.com/italia/pa-webinar/blob/d2162afd/docs/install/aks.md">AKS</a> · <a href="https://github.com/italia/pa-webinar/blob/d2162afd/docs/install/eks.md">EKS</a> · <a href="https://github.com/italia/pa-webinar/blob/d2162afd/docs/install/gke.md">GKE</a></p>
+                </div>
+              </article>
+            </div>
+
+            <h3 class="h4 mt-5">Docker Compose, step by step</h3>
+            <pre class="cmd" tabindex="0"><code>git clone https://github.com/italia/pa-webinar.git
+cd pa-webinar
+git checkout d2162afd
+scripts/compose-up.sh --images registry --tag dev-f4021b1</code></pre>
+            <p>At the end the script prints the addresses of the portal and of the test mailbox.</p>
+
+            <h3 class="h4 mt-4">minikube, step by step</h3>
+            <p>You need Linux, Docker, minikube 1.38.1 or later, Helm 3.16.3 or later, kubectl, openssl and curl. No credentials are needed.</p>
+            <pre class="cmd" tabindex="0"><code>git clone https://github.com/italia/pa-webinar.git
+cd pa-webinar
+git checkout d2162afd
+scripts/minikube-up.sh --images registry --tag dev-f4021b1</code></pre>
+            <ol>
+              <li>Open the conference address that the script prints (<code>https://jitsi.&lt;ip&gt;.nip.io</code>) once and accept its certificate, then do the same with the portal. Accepting only the portal is not enough: the room does not load.</li>
+              <li>The instance key is in <code>~/.config/pa-webinar/minikube/pa-webinar/secrets.yaml</code>, as <code>ADMIN_API_KEY</code>.</li>
+              <li>Sign in at <code>https://app.&lt;ip&gt;.nip.io/en/admin/login</code> with <strong>Sign in with the instance key</strong>, then follow the same steps as in the workshop.</li>
+              <li>The emails arrive in the mailbox at <code>https://mail.&lt;ip&gt;.nip.io</code>.</li>
+            </ol>
+            <p>Recording and the post-production on GPU need images that are not public yet, so they stay off in this setup. macOS and Windows have not been tested.</p>
+
+            <h3 class="h4 mt-4">All the guides</h3>
+            <p>Requirements, support levels, checklists and the limits of each platform: <a href="https://github.com/italia/pa-webinar/tree/d2162afd/docs/install">docs/install</a>.</p>
+          </section>
+
+          <section id="feedback" aria-labelledby="feedback-title">
+            <h2 id="feedback-title">Feedback</h2>
+            <p>At 17:35 Raffaele closes the shared room, and the questionnaire appears on every screen at the same time. It takes a minute and does not ask for your name. It runs inside PA Webinar itself, so the answers stay on the same servers as the rooms. If you close the tab before the end, you miss it.</p>
+            <p>Later, for a bug or an idea, open an issue on <a href="https://github.com/italia/pa-webinar/issues">github.com/italia/pa-webinar/issues</a>.</p>
+          </section>
+
+          <section id="links" aria-labelledby="links-title" class="mb-5">
+            <h2 id="links-title">Links</h2>
+            <ul>
+              <li>Source code: <a href="https://github.com/italia/pa-webinar">github.com/italia/pa-webinar</a></li>
+              <li>Documentation: <a href="https://github.com/italia/pa-webinar/tree/main/docs">github.com/italia/pa-webinar/docs</a></li>
+              <li>Report a problem or an idea: <a href="https://github.com/italia/pa-webinar/issues">issues</a></li>
+            </ul>
+          </section>
+
+        </div>
       </div>
-
-      <h2 id="instances">Instances you can join</h2>
-      <p class="pending">The addresses of the instances open during the workshop will be published here before the session.</p>
-
-      <h2 id="install">Install PA Webinar</h2>
-      <p>PA Webinar runs on Kubernetes. Pick the guide that matches where you want to run it.</p>
-
-      <h3>On your laptop</h3>
-      <p>Minikube is the quickest way to try the whole platform on one machine: <a href="https://github.com/italia/pa-webinar/blob/main/docs/install/minikube.md">minikube guide</a>.</p>
-      <p class="pending">The exact command for the workshop, with a fixed version, will be published here.</p>
-
-      <h3>On-premises</h3>
-      <p>A single server or a small cluster you manage: <a href="https://github.com/italia/pa-webinar/blob/main/docs/install/k3s.md">k3s guide</a>.</p>
-
-      <h3>In the cloud</h3>
-      <ul>
-        <li><a href="https://github.com/italia/pa-webinar/blob/main/docs/install/aks.md">Azure Kubernetes Service (AKS)</a></li>
-        <li><a href="https://github.com/italia/pa-webinar/blob/main/docs/install/eks.md">Amazon Elastic Kubernetes Service (EKS)</a></li>
-        <li><a href="https://github.com/italia/pa-webinar/blob/main/docs/install/gke.md">Google Kubernetes Engine (GKE)</a></li>
-      </ul>
-      <p>All installation guides and checklists: <a href="https://github.com/italia/pa-webinar/tree/main/docs/install">docs/install</a>.</p>
-
-      <h2 id="prepare">Before you arrive</h2>
-      <p class="pending">What to install and download before the workshop will be published here. The installation downloads several gigabytes, so plan to do it before you come.</p>
-
-      <h2 id="links">Links</h2>
-      <ul>
-        <li>Source code: <a href="https://github.com/italia/pa-webinar">github.com/italia/pa-webinar</a></li>
-        <li>Documentation: <a href="https://github.com/italia/pa-webinar/tree/main/docs">github.com/italia/pa-webinar/docs</a></li>
-        <li>Report a problem or an idea: <a href="https://github.com/italia/pa-webinar/issues">issues</a></li>
-      </ul>
     </div>
   </main>
 
-  <footer>
-    <div class="wrap">
-      <p>PA Webinar is free software, released under the EUPL-1.2.</p>
-      <p>This page: <a href="https://github.com/italia/pa-webinar-workshop">source</a> · content under CC BY-SA 4.0 · no cookies, no analytics.</p>
+  <footer class="it-footer">
+    <div class="it-footer-main">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="it-brand-wrapper">
+              <a href="/">
+                <svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-video"></use></svg>
+                <div class="it-brand-text">
+                  <div class="it-brand-title">PA Webinar</div>
+                  <div class="it-brand-tagline">Workshops</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="row pb-4">
+          <div class="col-12">
+            <p class="mb-1">PA Webinar is free software, released under the EUPL-1.2.</p>
+            <p class="mb-0">This page uses no cookies and no analytics. Its content is under CC BY-SA 4.0.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="it-footer-small-prints clearfix">
+      <div class="container">
+        <h2 class="visually-hidden">Useful links</h2>
+        <ul class="it-footer-small-prints-list list-inline mb-0 d-flex flex-column flex-md-row">
+          <li class="list-inline-item"><a href="https://github.com/italia/pa-webinar-workshop">Source of this page</a></li>
+          <li class="list-inline-item"><a href="https://github.com/italia/pa-webinar">PA Webinar on GitHub</a></li>
+          <li class="list-inline-item"><a href="https://italia.github.io/bootstrap-italia/">Built with Bootstrap Italia</a></li>
+        </ul>
+      </div>
     </div>
   </footer>
 </body>

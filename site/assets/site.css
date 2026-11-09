@@ -1,5 +1,5 @@
-/* Stile .italia essenziale: Titillium Web e palette di Bootstrap Italia,
-   tutto servito da questo sito, senza CDN. Solo tema chiaro. */
+/* Font di Bootstrap Italia serviti da questo sito (niente CDN), più i pochi
+   ritocchi che i componenti del design system non coprono. Solo tema chiaro. */
 
 @font-face { font-family: 'Titillium Web'; font-style: normal; font-weight: 400; font-display: swap;
   src: url('fonts/titillium-web-400-latin-ext.woff2') format('woff2');
@@ -26,107 +26,55 @@
   src: url('fonts/roboto-mono-latin.woff2') format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 
-:root {
-  --primary: #0066cc;
-  --primary-dark: #004d99;
-  --primary-darker: #003366;
-  --text: #1a1a1a;
-  --heading: #17324d;
-  --muted: #5d7083;
-  --border: #d9dadb;
-  --surface: #ffffff;
-  --surface-alt: #f2f7fc;
-  --warning-bg: #fff8e6;
-  --warning-border: #cc7a00;
-  --code-bg: #f6f8fa;
-  --focus: #ff9900;
-  --gutter: 16px;
-  --measure: 46rem;
+@font-face { font-family: 'Lora'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/lora-regular.woff2') format('woff2'); }
+@font-face { font-family: 'Lora'; font-style: italic; font-weight: 400; font-display: swap; src: url('fonts/lora-italic.woff2') format('woff2'); }
+@font-face { font-family: 'Lora'; font-style: normal; font-weight: 700; font-display: swap; src: url('fonts/lora-700.woff2') format('woff2'); }
+@font-face { font-family: 'Lora'; font-style: italic; font-weight: 700; font-display: swap; src: url('fonts/lora-700italic.woff2') format('woff2'); }
+
+/* Blocchi di comandi: si leggono e si copiano anche dal telefono. */
+pre.cmd {
+  background: #f2f7fc;
+  border: 1px solid #c5c7c9;
+  border-radius: 4px;
+  padding: 12px 14px;
+  margin: 0 0 16px;
+  overflow-x: auto;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  white-space: pre;
 }
+pre.cmd code { color: #17324d; background: none; padding: 0; }
 
-*, *::before, *::after { box-sizing: border-box; }
-
-html { -webkit-text-size-adjust: 100%; }
-
-body {
-  margin: 0;
-  background: var(--surface);
-  color: var(--text);
-  font-family: 'Titillium Web', Geneva, Tahoma, sans-serif;
-  font-size: 1.125rem;
-  line-height: 1.55;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+/* Numeri dei passi per i gruppi. */
+ol.passi { counter-reset: passo; list-style: none; padding-left: 0; }
+ol.passi > li { counter-increment: passo; position: relative; padding-left: 2.75rem; margin-bottom: 1.25rem; }
+ol.passi > li::before {
+  content: counter(passo);
+  position: absolute; left: 0; top: 0;
+  width: 2rem; height: 2rem; border-radius: 50%;
+  background: #0066cc; color: #fff; font-weight: 600;
+  display: flex; align-items: center; justify-content: center;
 }
+ol.passi .chi { display: inline-block; font-size: 0.875rem; font-weight: 600; color: #5d7083; text-transform: uppercase; letter-spacing: 0.03em; }
 
-a { color: var(--primary); text-underline-offset: 0.15em; }
-a:hover { color: var(--primary-dark); }
-:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+/* Domande frequenti e dettagli: <details> nativo, senza JavaScript. */
+details.aiuto { border: 1px solid #c5c7c9; border-radius: 4px; margin-bottom: 8px; background: #fff; }
+details.aiuto > summary { cursor: pointer; padding: 12px 16px; font-weight: 600; color: #0066cc; list-style-position: inside; }
+details.aiuto[open] > summary { border-bottom: 1px solid #e6e9f2; }
+details.aiuto > div { padding: 12px 16px 4px; }
 
-.skip { position: absolute; left: -999px; }
-.skip:focus { left: var(--gutter); top: 8px; z-index: 10; background: #fff; padding: 4px 8px; }
+/* Righe dei fatti in testa alla pagina. */
+.fatti { list-style: none; padding: 0; margin: 0 0 24px; }
+.fatti li { display: flex; gap: 12px; align-items: flex-start; padding: 8px 0; border-bottom: 1px solid #e6e9f2; }
+.fatti li:last-child { border-bottom: 0; }
+.fatti .icon { flex: 0 0 auto; margin-top: 2px; }
 
-.wrap { max-width: var(--measure); margin: 0 auto; padding: 0 var(--gutter); }
+/* Indirizzi lunghi delle istanze: vanno a capo invece di allargare la pagina. */
+.indirizzo { overflow-wrap: anywhere; }
 
-/* Testata */
-.slim { background: var(--primary-darker); color: #fff; font-size: 0.875rem; }
-.slim .wrap { padding-top: 6px; padding-bottom: 6px; }
-.slim a { color: #fff; text-decoration: none; font-weight: 600; }
-.slim a:hover { text-decoration: underline; color: #fff; }
+.in-attesa { color: #5d7083; font-style: italic; }
 
-.masthead { background: var(--primary); color: #fff; }
-.masthead .wrap { padding-top: 20px; padding-bottom: 22px; }
-.masthead a { color: #fff; text-decoration: none; }
-.masthead .brand { font-size: 1.75rem; font-weight: 700; line-height: 1.1; display: block; }
-.masthead .tagline { font-size: 1rem; opacity: 0.92; margin: 4px 0 0; }
+section + section { margin-top: 3rem; }
 
-/* Contenuto */
-main { flex: 1 0 auto; padding: 28px 0 48px; }
-
-.crumbs { font-size: 0.9375rem; color: var(--muted); margin: 0 0 12px; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 6px; }
-.crumbs li + li::before { content: '/'; margin-right: 6px; color: var(--border); }
-
-h1, h2, h3 { color: var(--heading); line-height: 1.2; }
-h1 { font-size: 2.125rem; font-weight: 700; margin: 0 0 16px; }
-h2 { font-size: 1.5rem; font-weight: 700; margin: 40px 0 12px; padding-top: 8px; border-top: 1px solid var(--border); }
-h3 { font-size: 1.1875rem; font-weight: 600; margin: 24px 0 8px; }
-
-p { margin: 0 0 14px; }
-ul, ol { padding-left: 1.25rem; margin: 0 0 14px; }
-li { margin-bottom: 6px; }
-
-.lead { font-size: 1.25rem; color: var(--heading); }
-
-.facts { display: grid; grid-template-columns: max-content 1fr; gap: 6px 16px; margin: 20px 0 24px; padding: 16px; background: var(--surface-alt); border-left: 4px solid var(--primary); }
-.facts dt { font-weight: 600; color: var(--heading); }
-.facts dd { margin: 0; }
-
-.callout { border: 1px solid var(--warning-border); border-left-width: 4px; background: var(--warning-bg); padding: 12px 16px; margin: 20px 0; }
-.callout p:last-child { margin-bottom: 0; }
-
-.pending { color: var(--muted); font-style: italic; }
-
-.cards { list-style: none; padding: 0; display: grid; gap: 12px; }
-.cards li { margin: 0; border: 1px solid var(--border); padding: 16px; }
-.cards a { font-weight: 600; font-size: 1.25rem; }
-.cards p { margin: 4px 0 0; color: var(--muted); }
-
-code, pre { font-family: 'Roboto Mono', ui-monospace, monospace; font-size: 0.9375rem; }
-code { background: var(--code-bg); padding: 0.1em 0.3em; }
-pre { background: var(--code-bg); border: 1px solid var(--border); padding: 12px 14px; overflow-x: auto; line-height: 1.45; margin: 0 0 16px; }
-pre code { background: none; padding: 0; }
-
-/* Piede */
-footer { background: var(--primary-darker); color: #fff; font-size: 0.9375rem; }
-footer .wrap { padding-top: 20px; padding-bottom: 24px; }
-footer a { color: #fff; }
-footer a:hover { color: #fff; }
-footer p { margin: 0 0 6px; }
-
-@media (max-width: 540px) {
-  body { font-size: 1.0625rem; }
-  h1 { font-size: 1.75rem; }
-  .facts { grid-template-columns: 1fr; gap: 0; }
-  .facts dd { margin-bottom: 8px; }
-}
+/* La linea della timeline sale fino al titolo della sezione: un po' d'aria. */
+#plan .it-timeline-wrapper { margin-top: 2.5rem; }
