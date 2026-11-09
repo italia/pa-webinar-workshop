@@ -55,6 +55,9 @@ body {
   font-family: 'Titillium Web', Geneva, Tahoma, sans-serif;
   font-size: 1.125rem;
   line-height: 1.55;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 a { color: var(--primary); text-underline-offset: 0.15em; }
@@ -79,7 +82,7 @@ a:hover { color: var(--primary-dark); }
 .masthead .tagline { font-size: 1rem; opacity: 0.92; margin: 4px 0 0; }
 
 /* Contenuto */
-main { padding: 28px 0 48px; }
+main { flex: 1 0 auto; padding: 28px 0 48px; }
 
 .crumbs { font-size: 0.9375rem; color: var(--muted); margin: 0 0 12px; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 6px; }
 .crumbs li + li::before { content: '/'; margin-right: 6px; color: var(--border); }
