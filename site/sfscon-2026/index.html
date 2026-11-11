@@ -97,17 +97,17 @@
               <figcaption class="visually-hidden">Who connects to what during the workshop</figcaption>
               <div class="schema-colonna">
                 <p class="schema-titolo">In Crane Hall</p>
-                <div class="nodo"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-user"></use></svg><div><strong>Your laptop or phone</strong><span>A browser and nothing else. Microphone off.</span></div></div>
-                <div class="nodo"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-presentation"></use></svg><div><strong>Daniele’s laptop</strong><span>On the projector and the speakers. The only open microphone in the room.</span></div></div>
+                <div class="nodo"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-user"></use></svg><div><strong>Your laptop or phone</strong><span>A browser and nothing else.</span></div></div>
+                <div class="nodo"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-presentation"></use></svg><div><strong>Daniele’s laptop</strong><span>On the projector.</span></div></div>
               </div>
-              <div class="schema-freccia"><span>pages over HTTPS, audio and video over UDP</span></div>
+              <div class="schema-freccia"><span>pages over HTTPS, video calls over UDP</span></div>
               <div class="schema-colonna schema-cluster">
                 <p class="schema-titolo">Kubernetes cluster · Azure Italy North</p>
                 <div class="nodo nodo-evidenza"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-video"></use></svg><div><strong>The assistance room</strong><span>An event on the PA Webinar test instance: instructions, keys, help and the questionnaire.</span></div></div>
                 <div class="nodo"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-settings"></use></svg><div><strong>Six instances, ws1 to ws6</strong><span>Where you create your event. Each with its own portal, PostgreSQL, Redis, mailbox and file storage. Their rooms use the video stack of the test instance.</span></div></div>
                 <div class="nodo"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-comment"></use></svg><div><strong>A translation engine</strong><span>EuroLLM 9B on CPU, shared by the six instances: it translates titles and descriptions into English when you save an event.</span></div></div>
-                <div class="nodo"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-exchange-circle"></use></svg><div><strong>One video bridge</strong><span>Carries the audio and video of every room. Its machine is switched on only when an event needs it.</span></div></div>
-                <div class="nodo"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-locked"></use></svg><div><strong>A relay on port 443</strong><span>For networks that block UDP: audio and video pass through it, encrypted.</span></div></div>
+                <div class="nodo"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-exchange-circle"></use></svg><div><strong>One video bridge</strong><span>Carries the video calls of every room. Its machine is switched on only when an event needs it.</span></div></div>
+                <div class="nodo"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-locked"></use></svg><div><strong>A relay on port 443</strong><span>For networks that block UDP: the calls pass through it, encrypted.</span></div></div>
               </div>
               <div class="schema-freccia verso-su"><span>moderates the assistance room</span></div>
               <div class="schema-colonna">
@@ -134,7 +134,6 @@
             <h2 id="bring-title">What to bring</h2>
             <ul>
               <li>A laptop with a recent Chrome, Edge or Firefox.</li>
-              <li><strong>Headphones</strong>, or keep the sound of the assistance room muted: you hear Raffaele from the speakers in the room, and twenty laptops playing the same voice make echo. Keep your microphone off.</li>
               <li>Nothing to install. If you want PA Webinar on your own laptop, install it at home: the download is about 2.7 GB and the room network cannot carry it for everyone. See <a href="#install">Install it yourself</a>.</li>
             </ul>
           </section>
@@ -238,7 +237,6 @@
             <p class="small">The room opens on Friday at 16:45. Before then the link shows a waiting room.</p>
             <ol>
               <li>Open the link, type your name and choose <strong>Enter now</strong> (if the room has just opened, the button reads <strong>The room is ready — come in</strong>). You do not need to register.</li>
-              <li>You enter with microphone and camera off: leave them off. Daniele’s laptop is the only open microphone in the room.</li>
               <li>Write in the <strong>Chat</strong> panel if something does not work: on the right on a laptop, at the bottom on a phone.</li>
               <li><strong>Keep the tab open until the end.</strong> The questionnaire appears there when Raffaele closes the room.</li>
             </ol>
