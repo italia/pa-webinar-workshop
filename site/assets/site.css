@@ -150,3 +150,12 @@ section + section { margin-top: 3rem; }
   .scala-asse::before { content: ''; order: 1; flex: 1; height: 3px; background: linear-gradient(90deg, #c5c7c9, #0066cc); }
   .scala-asse span:last-child { order: 2; }
 }
+
+/* Il brief del compito: i dati da usare, in un riquadro da tenere aperto accanto al portale. */
+.brief { border: 1px solid #c5c7c9; border-radius: 4px; background: #f5f7fb; padding: 16px; margin-bottom: 24px; }
+.brief h4 { margin-top: 16px; margin-bottom: 8px; }
+.brief h4:first-child { margin-top: 0; }
+.brief-dati { margin: 0 0 8px; }
+.brief-dati dt { font-weight: 600; margin-top: 8px; }
+.brief-dati dd { margin: 0; overflow-wrap: anywhere; }
+.brief code { overflow-wrap: anywhere; }

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PA Webinar workshop · SFSCON 2026</title>
-  <meta name="description" content="Hands-on PA Webinar workshop at SFSCON 2026: join a live room, run your own event on a group instance, and learn how to install PA Webinar with Docker Compose, minikube, k3s or in the cloud.">
+  <meta name="description" content="PA Webinar workshop at SFSCON 2026: create an event on your own as the organiser of a public administration, tell us how it went, and learn how to install PA Webinar with Docker Compose, minikube, k3s or in the cloud.">
   <link rel="stylesheet" href="/assets/bootstrap-italia/bootstrap-italia.min.css">
   <link rel="stylesheet" href="/assets/site.css">
 </head>
@@ -62,7 +62,7 @@
           </nav>
 
           <h1 class="mt-2 mb-3">PA Webinar workshop at SFSCON 2026</h1>
-          <p class="lead">In 40 minutes you use PA Webinar in three ways: as a participant in a live room, as the organiser of your own event, and as the person who installs it.</p>
+          <p class="lead">In 40 minutes you create an event on PA Webinar on your own, as the organiser of a public administration, and then tell us how it went.</p>
 
           <ul class="fatti">
             <li>
@@ -92,7 +92,7 @@
 
           <section id="setup" aria-labelledby="setup-title">
             <h2 id="setup-title">How today’s workshop is wired</h2>
-            <p>Everything you use today runs on one Kubernetes cluster in the Azure Italy North region, and all the rooms share one video bridge.</p>
+            <p>Everything you use today runs on one Kubernetes cluster in the Azure Italy North region.</p>
             <figure class="schema">
               <figcaption class="visually-hidden">Who connects to what during the workshop</figcaption>
               <div class="schema-colonna">
@@ -103,13 +103,13 @@
               <div class="schema-freccia"><span>pages over HTTPS, audio and video over UDP</span></div>
               <div class="schema-colonna schema-cluster">
                 <p class="schema-titolo">Kubernetes cluster · Azure Italy North</p>
-                <div class="nodo nodo-evidenza"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-video"></use></svg><div><strong>The shared room</strong><span>The PA Webinar test instance: portal and conference.</span></div></div>
-                <div class="nodo"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-settings"></use></svg><div><strong>Six group instances, ws1 to ws6</strong><span>Each with its own portal, PostgreSQL, Redis, mailbox and file storage. No video stack of their own.</span></div></div>
-                <div class="nodo"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-comment"></use></svg><div><strong>A translation engine</strong><span>EuroLLM 9B on CPU, shared by the six groups: it translates titles and descriptions when you save an event.</span></div></div>
+                <div class="nodo nodo-evidenza"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-video"></use></svg><div><strong>The assistance room</strong><span>An event on the PA Webinar test instance: instructions, keys, help and the questionnaire.</span></div></div>
+                <div class="nodo"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-settings"></use></svg><div><strong>Six instances, ws1 to ws6</strong><span>Where you create your event. Each with its own portal, PostgreSQL, Redis, mailbox and file storage. Their rooms use the video stack of the test instance.</span></div></div>
+                <div class="nodo"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-comment"></use></svg><div><strong>A translation engine</strong><span>EuroLLM 9B on CPU, shared by the six instances: it translates titles and descriptions into English when you save an event.</span></div></div>
                 <div class="nodo"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-exchange-circle"></use></svg><div><strong>One video bridge</strong><span>Carries the audio and video of every room. Its machine is switched on only when an event needs it.</span></div></div>
                 <div class="nodo"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-locked"></use></svg><div><strong>A relay on port 443</strong><span>For networks that block UDP: audio and video pass through it, encrypted.</span></div></div>
               </div>
-              <div class="schema-freccia verso-su"><span>moderates the shared room</span></div>
+              <div class="schema-freccia verso-su"><span>moderates the assistance room</span></div>
               <div class="schema-colonna">
                 <p class="schema-titolo">Online</p>
                 <div class="nodo"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-user"></use></svg><div><strong>Raffaele</strong><span>Connected remotely, as moderator.</span></div></div>
@@ -123,25 +123,19 @@
               <li><a class="list-item" href="#setup">How today’s workshop is wired</a></li>
               <li><a class="list-item" href="#bring">What to bring</a></li>
               <li><a class="list-item" href="#plan">The 40 minutes</a></li>
-              <li><a class="list-item" href="#room">The shared room</a></li>
-              <li><a class="list-item" href="#groups">Run your own event</a></li>
-              <li><a class="list-item" href="#install">Install it yourself</a></li>
+              <li><a class="list-item" href="#room">The assistance room</a></li>
+              <li><a class="list-item" href="#task">Your task</a></li>
               <li><a class="list-item" href="#feedback">Feedback</a></li>
+              <li><a class="list-item" href="#install">Install it yourself</a></li>
             </ul>
           </nav>
 
           <section id="bring" aria-labelledby="bring-title">
             <h2 id="bring-title">What to bring</h2>
             <ul>
-              <li>A laptop with a recent Chrome, Edge or Firefox. A phone is enough for the shared room.</li>
-              <li><strong>Headphones.</strong> Twenty laptops with open speakers in one room make echo and feedback. Keep your microphone off unless you are speaking.</li>
+              <li>A laptop with a recent Chrome, Edge or Firefox.</li>
+              <li><strong>Headphones</strong>, or keep the sound of the assistance room muted: you hear Raffaele from the speakers in the room, and twenty laptops playing the same voice make echo. Keep your microphone off.</li>
               <li>Nothing to install. If you want PA Webinar on your own laptop, install it at home: the download is about 2.7 GB and the room network cannot carry it for everyone. See <a href="#install">Install it yourself</a>.</li>
-            </ul>
-            <h3 class="h5 mt-4">Optional: your organisation’s look</h3>
-            <p>In the groups you can dress your instance as your organisation’s. If you want to, have these files on your laptop:</p>
-            <ul>
-              <li><strong>Your logo</strong>, as PNG, JPEG, WebP, SVG or GIF, up to 10 MB. An SVG, or a PNG with a transparent background, works best.</li>
-              <li><strong>Your privacy notice</strong>, and your accessibility statement if you have one, as <strong>HTML</strong>, in Italian or English. PA Webinar shows them on its Privacy and Accessibility pages. Markdown is not converted: it would appear as plain text, symbols included.</li>
             </ul>
           </section>
 
@@ -152,14 +146,14 @@
                 <div class="col-12">
                   <div class="timeline-element">
                     <div class="it-pin-wrapper it-evidence">
-                      <div class="pin-icon"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-map-marker"></use></svg></div>
+                      <div class="pin-icon"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-video"></use></svg></div>
                       <div class="pin-text"><span>17:00</span></div>
                     </div>
                     <div class="card-wrapper">
                       <div class="card">
                         <div class="card-body">
-                          <h3 class="card-title h5">Welcome · 5 minutes</h3>
-                          <p class="card-text">Open this page from the QR code on the screen. We go through the plan.</p>
+                          <h3 class="card-title h5">Setup · 5 minutes</h3>
+                          <p class="card-text">Open this page from the QR code on the screen and join <a href="#room">the assistance room</a>. Daniele shows it on the projector.</p>
                         </div>
                       </div>
                     </div>
@@ -168,14 +162,14 @@
                 <div class="col-12">
                   <div class="timeline-element">
                     <div class="it-pin-wrapper it-evidence">
-                      <div class="pin-icon"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-video"></use></svg></div>
+                      <div class="pin-icon"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-info-circle"></use></svg></div>
                       <div class="pin-text"><span>17:05</span></div>
                     </div>
                     <div class="card-wrapper">
                       <div class="card">
                         <div class="card-body">
-                          <h3 class="card-title h5">Join a live room · 10 minutes</h3>
-                          <p class="card-text">Everybody joins <a href="#room">the shared room</a> as a guest. Raise your hand, write in the chat, ask a question in Q&amp;A, answer a poll and add a word to the “In one word” cloud. Raffaele moderates and gives the floor to someone in the room.</p>
+                          <h3 class="card-title h5">Instructions · 5 minutes</h3>
+                          <p class="card-text">Raffaele explains the task and how to sign in as an administrator, and shares the instance keys in the chat of the assistance room. The task is on this page: <a href="#task">Your task</a>.</p>
                         </div>
                       </div>
                     </div>
@@ -185,13 +179,13 @@
                   <div class="timeline-element">
                     <div class="it-pin-wrapper it-evidence">
                       <div class="pin-icon"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-settings"></use></svg></div>
-                      <div class="pin-text"><span>17:15</span></div>
+                      <div class="pin-text"><span>17:10</span></div>
                     </div>
                     <div class="card-wrapper">
                       <div class="card">
                         <div class="card-body">
-                          <h3 class="card-title h5">Run your own event · 15 minutes</h3>
-                          <p class="card-text">Groups of three or four, each with its own PA Webinar instance: create an event, register, start the room, moderate. Raffaele shares the keys of the instances in the chat of the shared room, and Daniele helps in the room. <a href="#groups">The steps</a>.</p>
+                          <h3 class="card-title h5">Create your event · 20 minutes</h3>
+                          <p class="card-text">Each of you, alone, creates an event on a PA Webinar instance, following the task, until you reach its preview page.</p>
                         </div>
                       </div>
                     </div>
@@ -200,14 +194,14 @@
                 <div class="col-12">
                   <div class="timeline-element">
                     <div class="it-pin-wrapper it-evidence">
-                      <div class="pin-icon"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-software"></use></svg></div>
+                      <div class="pin-icon"><svg class="icon" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-check-circle"></use></svg></div>
                       <div class="pin-text"><span>17:30</span></div>
                     </div>
                     <div class="card-wrapper">
                       <div class="card">
                         <div class="card-body">
-                          <h3 class="card-title h5">Install it yourself · 5 minutes</h3>
-                          <p class="card-text">Raffaele shows an installation running on a laptop and the four ways to install. You do it later, with the commands in <a href="#install">Install it yourself</a>.</p>
+                          <h3 class="card-title h5">Feedback · 5 minutes</h3>
+                          <p class="card-text">Raffaele closes the assistance room, and a short questionnaire appears in its tab. You fill it in there and then. See <a href="#feedback">Feedback</a>.</p>
                         </div>
                       </div>
                     </div>
@@ -222,8 +216,8 @@
                     <div class="card-wrapper">
                       <div class="card">
                         <div class="card-body">
-                          <h3 class="card-title h5">Feedback and questions · 5 minutes</h3>
-                          <p class="card-text">Back in the shared room. When Raffaele closes it, a short questionnaire appears for everybody. Then your questions.</p>
+                          <h3 class="card-title h5">Open discussion · 5 minutes</h3>
+                          <p class="card-text">What was easy, what was hard, what you expected to find and did not, what you would improve first.</p>
                         </div>
                       </div>
                     </div>
@@ -234,176 +228,152 @@
           </section>
 
           <section id="room" aria-labelledby="room-title">
-            <h2 id="room-title">The shared room</h2>
+            <h2 id="room-title">The assistance room</h2>
+            <p>A PA Webinar room where Raffaele, online, gives the instructions, shares the keys and answers technical problems. Daniele shows it on the projector in Crane Hall.</p>
             <p>
               <a class="btn btn-primary btn-lg" href="https://pa-webinar-test.developers.italia.it/en/events/workshop-di-pa-webinar-a-sfscon-2026/live">
-                <svg class="icon icon-white me-2" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-video"></use></svg>Join the shared room
+                <svg class="icon icon-white me-2" aria-hidden="true"><use href="/assets/bootstrap-italia/sprites.svg#it-video"></use></svg>Join the assistance room
               </a>
             </p>
             <p class="small">The room opens on Friday at 16:45. Before then the link shows a waiting room.</p>
             <ol>
               <li>Open the link, type your name and choose <strong>Enter now</strong>. You do not need to register.</li>
-              <li>You enter with microphone and camera off. Leave the microphone off: Daniele’s laptop is the only open microphone in the room, and it plays Raffaele’s voice.</li>
-              <li>The panels are on the right on a laptop and at the bottom on a phone: Chat, Q&amp;A, Polls, In one word, Agenda, Materials, Participants.</li>
+              <li>You enter with microphone and camera off: leave them off. Daniele’s laptop is the only open microphone in the room.</li>
+              <li>Write in the <strong>Chat</strong> panel if something does not work: on the right on a laptop, at the bottom on a phone.</li>
+              <li><strong>Keep the tab open until the end.</strong> The questionnaire appears there when Raffaele closes the room.</li>
             </ol>
           </section>
 
-          <section id="groups" aria-labelledby="groups-title">
-            <h2 id="groups-title">Run your own event</h2>
-            <p>Each group gets one PA Webinar instance, installed for the workshop: you are its administrator and can change anything. At 17:15 Raffaele shares the <strong>instance key</strong> of each group in the chat of the shared room. Only the people in the room read that chat: the keys are never published on this page. The instances are deleted on Friday evening, with everything in them.</p>
+          <section id="task" aria-labelledby="task-title">
+            <h2 id="task-title">Your task: create an event</h2>
 
-            <h3 class="h4 mt-4">The instances</h3>
-            <p>Each instance has a mailbox: every email it sends ends up there, and nothing leaves the server. Use invented addresses, such as <code>anna@example.org</code>. Mailbox user: the instance name (<code>ws1</code>, <code>ws2</code>…), password: the instance key.</p>
-            <div class="it-card-group it-card-group-3-cols mb-4">
+            <h3 class="h4 mt-4">How it works</h3>
+            <ul>
+              <li>Work <strong>on your own</strong>, without talking with the people next to you.</li>
+              <li>Find your way in the platform by yourself: Raffaele and Daniele help only with technical or access problems. Write those in the chat of the assistance room.</li>
+              <li>You are the <strong>administrator</strong> of a PA Webinar instance installed for the workshop. Raffaele shares the <strong>instance keys</strong> in the chat of the assistance room. Only the people in the room read that chat: the keys are never published on this page.</li>
+              <li>Other people use the same instance at the same time: your nickname in the title tells your event apart. The instances are deleted on Friday evening, with everything in them.</li>
+            </ul>
+
+            <h3 class="h4 mt-4">Your instance</h3>
+            <p>Pick the instance by the first letter of your first name, open its portal and choose <strong>Sign in with the instance key</strong>.</p>
+            <div class="it-card-group it-card-group-3-cols mb-3">
               <article class="it-card rounded shadow-sm border">
-                <h4 class="it-card-title h5">Group 1 · ws1</h4>
+                <h4 class="it-card-title h5">ws1 · A to B</h4>
                 <div class="it-card-body">
-                  <p class="it-card-text mb-1 indirizzo"><a href="https://ws1.workshop.pa-webinar.developers.italia.it/en/admin/login">Portal</a></p>
-                  <p class="it-card-text mb-0 indirizzo"><a href="https://ws1-mail.workshop.pa-webinar.developers.italia.it/">Mailbox</a></p>
+                  <p class="it-card-text mb-0 indirizzo"><a href="https://ws1.workshop.pa-webinar.developers.italia.it/en/admin/login">Portal of ws1</a></p>
                 </div>
               </article>
               <article class="it-card rounded shadow-sm border">
-                <h4 class="it-card-title h5">Group 2 · ws2</h4>
+                <h4 class="it-card-title h5">ws2 · C to F</h4>
                 <div class="it-card-body">
-                  <p class="it-card-text mb-1 indirizzo"><a href="https://ws2.workshop.pa-webinar.developers.italia.it/en/admin/login">Portal</a></p>
-                  <p class="it-card-text mb-0 indirizzo"><a href="https://ws2-mail.workshop.pa-webinar.developers.italia.it/">Mailbox</a></p>
+                  <p class="it-card-text mb-0 indirizzo"><a href="https://ws2.workshop.pa-webinar.developers.italia.it/en/admin/login">Portal of ws2</a></p>
                 </div>
               </article>
               <article class="it-card rounded shadow-sm border">
-                <h4 class="it-card-title h5">Group 3 · ws3</h4>
+                <h4 class="it-card-title h5">ws3 · G to L</h4>
                 <div class="it-card-body">
-                  <p class="it-card-text mb-1 indirizzo"><a href="https://ws3.workshop.pa-webinar.developers.italia.it/en/admin/login">Portal</a></p>
-                  <p class="it-card-text mb-0 indirizzo"><a href="https://ws3-mail.workshop.pa-webinar.developers.italia.it/">Mailbox</a></p>
+                  <p class="it-card-text mb-0 indirizzo"><a href="https://ws3.workshop.pa-webinar.developers.italia.it/en/admin/login">Portal of ws3</a></p>
                 </div>
               </article>
               <article class="it-card rounded shadow-sm border">
-                <h4 class="it-card-title h5">Group 4 · ws4</h4>
+                <h4 class="it-card-title h5">ws4 · M</h4>
                 <div class="it-card-body">
-                  <p class="it-card-text mb-1 indirizzo"><a href="https://ws4.workshop.pa-webinar.developers.italia.it/en/admin/login">Portal</a></p>
-                  <p class="it-card-text mb-0 indirizzo"><a href="https://ws4-mail.workshop.pa-webinar.developers.italia.it/">Mailbox</a></p>
+                  <p class="it-card-text mb-0 indirizzo"><a href="https://ws4.workshop.pa-webinar.developers.italia.it/en/admin/login">Portal of ws4</a></p>
                 </div>
               </article>
               <article class="it-card rounded shadow-sm border">
-                <h4 class="it-card-title h5">Group 5 · ws5</h4>
+                <h4 class="it-card-title h5">ws5 · N to R</h4>
                 <div class="it-card-body">
-                  <p class="it-card-text mb-1 indirizzo"><a href="https://ws5.workshop.pa-webinar.developers.italia.it/en/admin/login">Portal</a></p>
-                  <p class="it-card-text mb-0 indirizzo"><a href="https://ws5-mail.workshop.pa-webinar.developers.italia.it/">Mailbox</a></p>
+                  <p class="it-card-text mb-0 indirizzo"><a href="https://ws5.workshop.pa-webinar.developers.italia.it/en/admin/login">Portal of ws5</a></p>
                 </div>
               </article>
               <article class="it-card rounded shadow-sm border">
-                <h4 class="it-card-title h5">Group 6 · ws6</h4>
+                <h4 class="it-card-title h5">ws6 · S to Z</h4>
                 <div class="it-card-body">
-                  <p class="it-card-text mb-1 indirizzo"><a href="https://ws6.workshop.pa-webinar.developers.italia.it/en/admin/login">Portal</a></p>
-                  <p class="it-card-text mb-0 indirizzo"><a href="https://ws6-mail.workshop.pa-webinar.developers.italia.it/">Mailbox</a></p>
+                  <p class="it-card-text mb-0 indirizzo"><a href="https://ws6.workshop.pa-webinar.developers.italia.it/en/admin/login">Portal of ws6</a></p>
                 </div>
               </article>
             </div>
+            <p class="small">Use only invented addresses, such as the ones below: every email the instance sends ends up in a test mailbox of its own, and nothing leaves the server.</p>
 
-            <h3 class="h4 mt-4">The exercise at a glance</h3>
-            <figure class="flusso">
-              <figcaption class="visually-hidden">The group exercise, step by step, by role: organiser, mailbox, participants</figcaption>
-              <div class="flusso-testa fl-org" aria-hidden="true">Organiser</div>
-              <div class="flusso-testa fl-mail" aria-hidden="true">Mailbox</div>
-              <div class="flusso-testa fl-part" aria-hidden="true">Participants</div>
-                <div class="fl fl-org fl-r1"><span class="fl-num">1</span><div><span class="fl-ruolo">Organiser</span><strong>Make it yours, then create</strong><span class="fl-testo">Instance key → Settings: name, logo, colour → New event → four questions → six steps → Publish event</span></div></div>
-                <div class="fl fl-part fl-r2"><span class="fl-num">2</span><div><span class="fl-ruolo">Participants</span><strong>Register</strong><span class="fl-testo">Public page → Register for this event, with an invented address</span></div></div>
-                <div class="fl fl-mail fl-r3"><span class="fl-num">3</span><div><span class="fl-ruolo">Mailbox</span><strong>Emails arrive</strong><span class="fl-testo">A personal link for each participant, the moderator link for the organiser</span></div></div>
-                <div class="fl fl-org fl-r4"><span class="fl-num">4</span><div><span class="fl-ruolo">Organiser</span><strong>Start the room</strong><span class="fl-testo">Moderator link → Join as moderator → Start event → Start now</span></div></div>
-                <div class="fl fl-part fl-r5"><span class="fl-num">5</span><div><span class="fl-ruolo">Participants</span><strong>Wait in the square, then enter</strong><span class="fl-testo">Personal link → Step into the square → Enter now when the room opens</span></div></div>
-                <div class="fl fl-tutti fl-r6"><span class="fl-num">6</span><div><span class="fl-ruolo">Everybody</span><strong>Meet in the room</strong><span class="fl-testo">Raise hands, chat, Q&amp;A, polls, “In one word”, agenda</span></div></div>
-                <div class="fl fl-org fl-r7"><span class="fl-num">7</span><div><span class="fl-ruolo">Organiser</span><strong>Close and look back</strong><span class="fl-testo">Leave room → End for everyone → People, Statistics, After the event</span></div></div>
-            </figure>
+            <h3 class="h4 mt-4">The scenario</h3>
+            <p>Your organisation has to hold an institutional event online to present a new project to its stakeholders. Your job is to set up the event on PA Webinar: its information, the people involved and how others take part.</p>
 
-            <h3 class="h4 mt-4">The steps</h3>
-            <p>Decide who does what: one <strong>organiser</strong>, who also moderates the room, and the others as <strong>participants</strong>. Swap roles if there is time.</p>
-            <ol class="passi">
-              <li>
-                <span class="chi">Organiser</span>
-                <p class="mb-0">Open the portal of your instance, choose <strong>Sign in with the instance key</strong> and paste the key that Raffaele shared in the chat of the shared room.</p>
-              </li>
-              <li>
-                <span class="chi">Organiser</span>
-                <p class="mb-1">Make the instance yours in <strong>Settings → Branding</strong>, then <strong>Save</strong>:</p>
-                <ul class="mb-0">
-                  <li><strong>Application name</strong> and <strong>Organization name</strong>: they appear in the header, the browser tab and the emails.</li>
-                  <li><strong>Custom logo</strong>: upload an image from your laptop, PNG, JPEG, WebP, SVG or GIF.</li>
-                  <li><strong>Primary color</strong> for buttons and links.</li>
-                  <li><strong>Waiting room</strong> is already set to the square: <strong>Videogame</strong>. Leave it, or try <strong>Classic</strong>.</li>
-                </ul>
-                <p class="mt-1 mb-0">If you brought a privacy notice, paste it in <strong>Settings → Pages</strong>, in the Italian or English box, and <strong>Save</strong>: it appears on the Privacy page of your instance.</p>
-              </li>
-              <li>
-                <span class="chi">Organiser</span>
-                <p class="mb-1">Go to <strong>Events → New event</strong> and answer the four questions:</p>
-                <ul class="mb-1">
-                  <li>How many people do you expect? <strong>Up to 20</strong></li>
-                  <li>Who can speak and appear on video? <strong>Everyone</strong></li>
-                  <li>Do you want to be able to record? <strong>No</strong>: recording is not installed on these instances</li>
-                  <li>Who can take part? <strong>Anyone who registers</strong></li>
-                </ul>
-                <p class="mb-0">Then <strong>Continue</strong>.</p>
-              </li>
-              <li>
-                <span class="chi">Organiser</span>
-                <p class="mb-1">Fill in the six steps and choose <strong>Publish event</strong> at the end. Three things to know:</p>
-                <ul class="mb-0">
-                  <li>The title and the description <strong>in Italian</strong> are required, even with the screens in English. PA Webinar is made for the Italian public administration, so Italian is always the main language. Write whatever you like there and leave English empty: when you save, PA Webinar translates the title and the description into English by itself, in less than a minute. The English page of the event shows the translation.</li>
-                  <li>In <strong>When</strong>, set today and a start time a few minutes from now.</li>
-                  <li>In <strong>People</strong>, the lead moderator is you, with an invented address.</li>
-                </ul>
-              </li>
-              <li>
-                <span class="chi">Participants</span>
-                <p class="mb-0">Open the public page of the event: the organiser shares it with <strong>Copy public link</strong> or shows its QR code. Choose <strong>Register for this event</strong> and use an invented address.</p>
-              </li>
-              <li>
-                <span class="chi">Everybody</span>
-                <p class="mb-0">Open the mailbox of your instance. Emails arrive within a minute: the registration confirmations for the participants, the moderator link for the organiser.</p>
-              </li>
-              <li>
-                <span class="chi">Organiser</span>
-                <p class="mb-0">Open the moderator link, then <strong>Join as moderator</strong>, <strong>Start event</strong> and <strong>Start now</strong>.</p>
-              </li>
-              <li>
-                <span class="chi">Participants</span>
-                <p class="mb-0">Open your link from the confirmation email. Until the room opens you wait: choose <strong>Step into the square</strong> to walk around with an avatar and meet the others who are waiting. When the organiser starts the room, type your name and choose <strong>Enter now</strong>. Microphone and camera start off: turn them on only with headphones.</p>
-              </li>
-              <li>
-                <span class="chi">Everybody</span>
-                <p class="mb-0">Try what you would use in a real meeting: raise your hand, chat, Q&amp;A, a poll, “In one word”, the agenda. The organiser answers raised hands with <strong>Give the floor</strong> and finds the room controls in the <strong>Control</strong> panel.</p>
-              </li>
-              <li>
-                <span class="chi">Organiser</span>
-                <p class="mb-0">Close with <strong>Leave room → End for everyone</strong>. Then open the event in the administration area and look at the <strong>People</strong>, <strong>Statistics</strong> and <strong>After the event</strong> tabs.</p>
-              </li>
-            </ol>
+            <h3 class="h4 mt-4">The information to use</h3>
+            <p>PA Webinar is made for the Italian public administration, so the event texts are in Italian: type them as written here.</p>
+            <div class="brief">
+              <h4 class="h5">When</h4>
+              <ul>
+                <li>16 November 2026, from 10:00 to 11:00</li>
+                <li>Expected participants: 30</li>
+              </ul>
+
+              <h4 class="h5">The event</h4>
+              <dl class="brief-dati">
+                <dt>Title</dt>
+                <dd lang="it">[Your nickname] Presentazione del progetto “Innovazione Digitale - Nuovi servizi e opportunità per i cittadini”</dd>
+                <dt>Description</dt>
+                <dd lang="it">Un incontro dedicato alla presentazione delle nuove iniziative di innovazione digitale e dei servizi sviluppati dall’organizzazione.</dd>
+                <dt>Programme, shown in the agenda</dt>
+                <dd>
+                  <ul class="mb-0" lang="it">
+                    <li>10:00 – Apertura dei lavori</li>
+                    <li>10:15 – Presentazione del progetto</li>
+                    <li>10:45 – Domande e approfondimenti</li>
+                    <li>10:55 – Conclusioni</li>
+                  </ul>
+                </dd>
+                <dt>Tags</dt>
+                <dd lang="it">Innovazione digitale, Servizi pubblici</dd>
+              </dl>
+
+              <h4 class="h5">The event also needs</h4>
+              <ul>
+                <li>Participants can use the chat and ask questions in a structured way during the event.</li>
+                <li>Automatic live captions are on, and so is their transcript.</li>
+                <li>The recording is available after the event, for an internal review.</li>
+                <li>The “Post evento” questionnaire at the end of the event.</li>
+              </ul>
+
+              <h4 class="h5">People and organisation</h4>
+              <ul class="mb-0">
+                <li>You are the organiser: use your nickname and an invented address, such as <code>yournickname@example.org</code>.</li>
+                <li>The event is promoted by <span lang="it">Comune di Valleverde</span>.</li>
+                <li>Laura Bianchi, <code>laura.bianchi@example.org</code>, presents the project.</li>
+                <li>Paolo Verdi, <code>paolo.verdi@example.org</code>, helps you manage questions and interventions.</li>
+                <li>The event is open to everybody.</li>
+              </ul>
+            </div>
+
+            <h3 class="h4 mt-4">When you are done</h3>
+            <p>Complete the creation of the event and reach its preview page. Check that the information you entered is correct and that the information to join the video call is there.</p>
 
             <h3 class="h4 mt-4">If something does not work</h3>
             <details class="aiuto">
               <summary>The key is refused</summary>
-              <div><p>Copy it again from the chat, without spaces at the start or at the end. Each key works only on its own instance.</p></div>
+              <div><p>Copy it again from the chat, without spaces at the start or at the end. Each key works only on its own instance: check the first letter of your name.</p></div>
             </details>
             <details class="aiuto">
-              <summary>No email in the mailbox</summary>
-              <div><p>The instance sends emails once a minute: wait a minute and reload the mailbox. Check that you opened the mailbox of your own instance.</p></div>
+              <summary>“Too many attempts”</summary>
+              <div><p>Many people sign in from the same network at the same moment: wait a minute and try again.</p></div>
             </details>
             <details class="aiuto">
-              <summary>“Enter now” does not appear, or the room is getting ready</summary>
-              <div><p>The event has not started yet. The organiser opens the moderator link and chooses <strong>Start event</strong>, then <strong>Start now</strong>.</p></div>
+              <summary>The page does not load, or anything else</summary>
+              <div><p>Write in the chat of the assistance room, with the name of your instance.</p></div>
             </details>
-            <details class="aiuto">
-              <summary>Nobody hears me, or there is echo</summary>
-              <div><p>Use headphones and check that your microphone is on in the room toolbar. If two laptops in the same group have open speakers, mute one of them.</p></div>
-            </details>
-            <details class="aiuto">
-              <summary>Still stuck</summary>
-              <div><p>Raise your hand in the shared room, or call Daniele. Note what blocked you: it is exactly what we want to hear in the questionnaire.</p></div>
-            </details>
+          </section>
+
+          <section id="feedback" aria-labelledby="feedback-title">
+            <h2 id="feedback-title">Feedback</h2>
+            <p>At 17:30 Raffaele closes the assistance room, and the questionnaire appears in its tab on every screen at the same time. Thirteen questions, about three minutes, all optional, and it does not ask for your name. It runs inside PA Webinar itself, so the answers stay on the same servers as the rooms. If you close the tab before the end, you miss it.</p>
+            <p>Want to follow similar initiatives? <a href="https://designers.italia.it/#iscrivitiNewsletter">Subscribe to the Designers Italia and Developers Italia newsletter</a>.</p>
+            <p>Later, for a bug or an idea, open an issue on <a href="https://github.com/italia/pa-webinar/issues">github.com/italia/pa-webinar/issues</a>.</p>
           </section>
 
           <section id="install" aria-labelledby="install-title">
             <h2 id="install-title">Install it yourself</h2>
-            <p>PA Webinar runs on Kubernetes, and Docker Compose is enough to look at the portal. All the commands below use the same version as the group instances: commit <code>d2162afd</code> of the <code>main</code> branch, with the images tagged <code>dev-f4021b1</code>.</p>
+            <p>PA Webinar runs on Kubernetes, and Docker Compose is enough to look at the portal. All the commands below use the same version as the workshop instances: commit <code>d2162afd</code> of the <code>main</code> branch, with the images tagged <code>dev-f4021b1</code>.</p>
             <div class="callout note">
               <div class="callout-inner">
                 <div class="callout-title">
@@ -469,12 +439,6 @@ scripts/minikube-up.sh --images registry --tag dev-f4021b1</code></pre>
 
             <h3 class="h4 mt-4">All the guides</h3>
             <p>Requirements, support levels, checklists and the limits of each platform: <a href="https://github.com/italia/pa-webinar/tree/d2162afd/docs/install">docs/install</a>.</p>
-          </section>
-
-          <section id="feedback" aria-labelledby="feedback-title">
-            <h2 id="feedback-title">Feedback</h2>
-            <p>At 17:35 Raffaele closes the shared room, and the questionnaire appears on every screen at the same time. It takes a minute and does not ask for your name. It runs inside PA Webinar itself, so the answers stay on the same servers as the rooms. If you close the tab before the end, you miss it.</p>
-            <p>Later, for a bug or an idea, open an issue on <a href="https://github.com/italia/pa-webinar/issues">github.com/italia/pa-webinar/issues</a>.</p>
           </section>
 
           <section id="links" aria-labelledby="links-title" class="mb-5">
