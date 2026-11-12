@@ -159,3 +159,17 @@ section + section { margin-top: 3rem; }
 .brief-dati dt { font-weight: 600; margin-top: 8px; }
 .brief-dati dd { margin: 0; overflow-wrap: anywhere; }
 .brief code { overflow-wrap: anywhere; }
+
+/* Marchio ufficiale di PA Webinar (manuale di identità visiva): versione
+   negativa sui fondi blu di intestazione e piè di pagina, simbolo alto 40 px,
+   intorno uno spazio libero pari a metà dell'altezza del simbolo. */
+.it-brand-wrapper .marchio {
+  height: 40px;
+  width: auto;
+  flex-shrink: 0;
+}
+.it-brand-wrapper .marchio + .it-brand-text {
+  margin-left: 20px;
+  padding-left: 20px;
+  border-left: 1px solid rgba(255, 255, 255, 0.4);
+}

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="364.5 377.75 324.6 324.6">
+  <defs>
+    <style>
+      .st0 {
+        fill: #fff;
+        fill-rule: evenodd;
+      }
+
+      .st1 {
+        fill: #5cb0fe;
+      }
+
+      .st3 {
+        fill: #06c;
+      }
+
+      .st4 {
+        fill: #b6dbfd;
+      }
+    </style>
+  </defs>
+  <rect class="st4" x="364.5" y="428.2" width="183" height="223.6" rx="32.6" ry="32.6"/>
+  <rect class="st1" x="410.9" y="408.5" width="227.2" height="263.1" rx="36.5" ry="36.5"/>
+  <rect class="st3" x="461.9" y="408.5" width="227.2" height="263.1" rx="36.5" ry="36.5"/>
+  <polygon class="st0" points="543.2 497 617.1 539.8 543.2 582.5 543.2 497"/>
+  </svg>
